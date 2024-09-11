@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Room List</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to your CSS file if needed -->
+</head>
+<body>
+    <h1>Room Information</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>City Name</th>
+                <th>Area Name</th>
+                <th>Type</th>
+                <th>Deposit</th>
+                <th>Rent</th>
+                <th>Contact</th>
+                <th>Additional Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="roominfo : ${roominfo}">
+                <td th:text="${roominfo.id}"></td>
+                <td th:text="${roominfo.cityname}"></td>
+                <td th:text="${roominfo.areaname}"></td>
+                <td th:text="${roominfo.types}"></td>
+                <td th:text="${roominfo.deposit}"></td>
+                <td th:text="${roominfo.rent}"></td>
+                <td th:text="${roominfo.contact}"></td>
+                <td th:text="${roominfo.any}"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>
